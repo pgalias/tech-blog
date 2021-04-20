@@ -1,0 +1,24 @@
+{
+  "id": "9e8b8916-ac88-48d1-ac3e-9f77899fbc32",
+  "rev": "9-263952604fac4c6e8656ed83aefe0e9d",
+  "name": "Rich text",
+  "classification": "content-type",
+  "kind": [
+    "embedded",
+    "custom-ui"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [],
+  "elements": [
+    {
+      "elementType": "formattedtext",
+      "label": "Text",
+      "key": "text"
+    }
+  ],
+  "icon": "formattedtext",
+  "uiExtensions": {
+    "element": "/dxauth/ui-extension-rte/index.html"
+  }
+}
