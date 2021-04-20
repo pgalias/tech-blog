@@ -1,0 +1,30 @@
+.section {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.article {
+    flex: 1 1 33%;
+    max-width: 33%;
+    max-height: 100%;
+}
+
+.articleImg {
+    width: 100%;
+}
+
+.articleName {
+    font-size: 1.6rem;
+    line-height: 1.2;
+}
+
+.articleCategory {
+    font-size: 0.8rem;
+    color: gray;
+    margin: 0;
+}
+
+.articleContent {
+
+}
