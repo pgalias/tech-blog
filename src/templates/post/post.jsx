@@ -1,7 +1,5 @@
 import React from "react"
 import { Link } from "gatsby"
-import { MDXRenderer } from 'gatsby-plugin-mdx'
-import { MDXProvider } from '@mdx-js/react'
 import * as styles from "./style.module.css"
 
 const Post = ({ pageContext: { post } }) => {
@@ -19,7 +17,7 @@ const Post = ({ pageContext: { post } }) => {
           <span>{post.elements.author.value}</span>
           <small>{post.created}</small>
         </h3>
-        <div className={styles.content}><MDXProvider components={{}}>{post.elements.body.value.text.value}</MDXProvider></div>
+        <div className={styles.content} dangerouslySetInnerHTML={{__html: post.elements.body.value.text.value}}></div>
         <Link to="/">Go back</Link>
       </div>
     </article>

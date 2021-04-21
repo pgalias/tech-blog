@@ -1,7 +1,7 @@
 {
   "id": "9e8b8916-ac88-48d1-ac3e-9f77899fbc32",
-  "rev": "1-1fa0470b49cc43b29de0b78609946c93",
-  "name": "Rich text",
+  "rev": "2-765717c7f0094222892a8ee42c8cc2d7",
+  "name": "Rich text HTML",
   "classification": "content-type",
   "kind": [
     "embedded",

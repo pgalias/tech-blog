@@ -34,8 +34,8 @@ var editorPromise = ClassicEditor.create(document.querySelector("#editor"), {
       'mediaEmbed',
       'undo',
       'redo',
-      'codeBlock',
       'code',
+      'codeBlock',
       'removeFormat'
     ]
   },
