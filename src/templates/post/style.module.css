@@ -1,0 +1,22 @@
+.article {}
+
+.img {
+    width: 100%;
+    max-height: 32rem;
+    object-fit: cover;
+}
+
+.header {
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+
+.subheader {
+    display: flex;
+    justify-content: space-between;
+}
+
+.content {
+    margin-top: 4rem;
+}
