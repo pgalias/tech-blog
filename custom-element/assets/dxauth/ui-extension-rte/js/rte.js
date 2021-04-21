@@ -15,18 +15,45 @@ limitations under the License.
 // See: https://docs.ckeditor.com/ckeditor5/latest/builds/guides/integration/configuration.html and
 // https://docs.ckeditor.com/ckeditor5/latest/api/module_core_editor_editorconfig-EditorConfig.html
 var editorPromise = ClassicEditor.create(document.querySelector("#editor"), {
-  toolbar: [
-    "heading",
-    "|",
-    "bold",
-    "italic",
-    "link",
-    "bulletedList",
-    "numberedList",
-    "blockQuote",
-    "undo",
-    "redo",
-  ],
+  toolbar: {
+    items: [
+      'heading',
+      '|',
+      'bold',
+      'italic',
+      'link',
+      'bulletedList',
+      'numberedList',
+      '|',
+      'outdent',
+      'indent',
+      '|',
+      'imageUpload',
+      'blockQuote',
+      'insertTable',
+      'mediaEmbed',
+      'undo',
+      'redo',
+      'codeBlock',
+      'code',
+      'removeFormat'
+    ]
+  },
+  language: 'en',
+  image: {
+    toolbar: [
+      'imageTextAlternative',
+      'imageStyle:full',
+      'imageStyle:side'
+    ]
+  },
+  table: {
+    contentToolbar: [
+      'tableColumn',
+      'tableRow',
+      'mergeTableCells'
+    ]
+  },
 }).catch((error) => {
   console.log(error);
 });
@@ -75,7 +102,7 @@ editorPromise.then((editor) => {
 
     console.log(
       "available toolbar buttons:",
-      Array.from(editor.ui.componentFactory.names())
+      Array.from(editor.ui.componentFactory.names()),
     );
   });
 
