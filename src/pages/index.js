@@ -1,6 +1,5 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import parse from "html-react-parser"
 import * as styles from "./index.module.css"
 
 export default function Home({ data }) {
@@ -27,10 +26,7 @@ export default function Home({ data }) {
               <Link to={`/${post.id}`}>{post.name}</Link>
             </h3>
             <div className={styles.articleContent}>
-              Here we can truncate the content element or we can also create
-              additional element into content type to create a blog post
-              introduction with max characters set
-              {parse(post.elements.ft.value)}
+              {post.description}
             </div>
             <Link to={`/${post.id}`}>Read more</Link>
           </article>
@@ -47,18 +43,28 @@ export const pageQuery = graphql`
         documents {
           document {
             id
+            name
             elements {
-              ft {
-                value
-                elementType
+              body {
+                value {
+                  text {
+                    value
+                  }
+                }
               }
               img {
                 url
-                altText
+                asset {
+                  altText
+                }
+              }
+              author {
+                value
               }
             }
+            tags
+            description
             lastModified(fromNow: true)
-            name
             created(fromNow: true)
           }
         }
