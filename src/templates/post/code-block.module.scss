@@ -1,0 +1,22 @@
+.code-block-editor {
+  border: 1px solid lightgray;
+}
+
+.code-block-editor-readonly {
+  padding: 10px;
+  border: 1px solid lightgray;
+  background-color: rgb(251, 251, 251);
+}
+
+.code-block-result {
+  .code-block-editor + & {
+    border-top: 0;
+  }
+
+  &-title {
+    padding-bottom: 10px;
+  }
+
+  border: 1px solid lightgray;
+  padding: 10px;
+}

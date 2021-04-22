@@ -1,31 +1,39 @@
 import React from "react"
 import { unescape } from "lodash"
 import Highlight, { defaultProps } from "prism-react-renderer"
-import theme from "prism-react-renderer/themes/nightOwl"
+import theme from "prism-react-renderer/themes/nightOwlLight"
 import * as decibel from "@decibel/components"
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live"
+import * as styles from "./code-block.module.scss"
 
 export const ReadonlyCodeBlock = ({ code, language }) => (
-  <Highlight {...defaultProps} code={code} language={language} theme={theme}>
-    {({ className, style, tokens, getLineProps, getTokenProps }) => (
-      <pre className={className} style={style}>
-        {tokens.map((line, i) => (
-          <div {...getLineProps({ line, key: i })}>
-            {line.map((token, key) => (
-              <span {...getTokenProps({ token, key })} />
-            ))}
-          </div>
-        ))}
-      </pre>
-    )}
-  </Highlight>
+  <div className={styles.codeBlockEditorReadonly}>
+    <Highlight {...defaultProps} code={code} language={language} theme={theme}>
+      {({ className, style, tokens, getLineProps, getTokenProps }) => (
+        <pre className={className} style={style}>
+          {tokens.map((line, i) => (
+            <div {...getLineProps({ line, key: i })}>
+              {line.map((token, key) => (
+                <span {...getTokenProps({ token, key })} />
+              ))}
+            </div>
+          ))}
+        </pre>
+      )}
+    </Highlight>
+  </div>
 )
 
 const LiveCodeBlock = ({ code }) => (
   <LiveProvider code={code} scope={{ Button: decibel.Button }} theme={theme}>
-    <LiveEditor />
+    <div className={styles.codeBlockEditor}>
+      <LiveEditor />
+    </div>
+    <div className={styles.codeBlockResult}>
+      <div className={styles.codeBlockResultTitle}>Preview:</div>
+      <LivePreview />
+    </div>
     <LiveError />
-    <LivePreview />
   </LiveProvider>
 )
 
@@ -41,6 +49,7 @@ export const CodeBlock = ({ codeBlock }) => {
   const language = getLanguage(codeBlock)
   const code = unescape(codeBlock.innerHTML)
 
+  console.log(isLive(codeBlock), codeBlock.classList)
   if (isReact(language) && isLive(codeBlock)) {
     return <LiveCodeBlock code={code} />
   }
