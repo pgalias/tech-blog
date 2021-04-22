@@ -1,4 +1,4 @@
 // normalize CSS across browsers
-import "./src/normalize.css"
+import "./src/normalize.scss"
 // common CSS styles
-import "./src/common.css"
+import "./src/common.scss"

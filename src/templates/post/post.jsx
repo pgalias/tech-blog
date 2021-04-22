@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import * as styles from "./style.module.css"
+import * as styles from "./style.module.scss"
 
 const Post = ({ pageContext: { post } }) => {
   return (
@@ -17,7 +17,12 @@ const Post = ({ pageContext: { post } }) => {
           <span>{post.elements.author.value}</span>
           <small>{post.created}</small>
         </h3>
-        <div className={styles.content} dangerouslySetInnerHTML={{__html: post.elements.body.value.text.value}}></div>
+        <div
+          className={styles.content}
+          dangerouslySetInnerHTML={{
+            __html: post.elements.body.value.text.value,
+          }}
+        />
         <Link to="/">Go back</Link>
       </div>
     </article>
