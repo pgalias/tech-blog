@@ -14,7 +14,7 @@ export default function Home({ data }) {
   return (
     <Layout>
       <div className="container">
-        <h1>Welcome to bugno</h1>
+        <h1 className={styles.articleIntro}>Welcome to bugno</h1>
         <section className={styles.section}>
           {posts.map((post) => (
             <GalleryTile

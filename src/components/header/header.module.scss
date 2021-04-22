@@ -1,19 +1,23 @@
 @import '~@decibel/components/lib/scss/globals/scss/helper-mixins';
-@import '~@decibel/components/lib/scss/acoustic-theme/_acoustic-theme';
 
 .header {
   background: #047970;
+  position:sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .logoWrapper {
   display: flex;
-  width: 100%;
   padding: 1rem 1rem 1rem 0;
 }
 
 .productName {
-  display: flex;
   color: $ui-02;
-  padding-left: 2rem;
+  padding-left: 1.5rem;
   @include type-style('productive-heading-01');
+}
+
+a {
+  text-decoration: none;
 }
