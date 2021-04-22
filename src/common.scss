@@ -1,3 +1,6 @@
+$acoustic-font-path: '../node_modules/@decibel/components/lib/scss/' !global;
+@import '~@decibel/components/lib/styles.css';
+
 .container {
     width: 100%;
     margin-right: auto;
