@@ -1,4 +1,5 @@
 import React from "react"
+import { unescape } from "lodash"
 import Highlight, { defaultProps } from "prism-react-renderer"
 import theme from "prism-react-renderer/themes/nightOwl"
 import * as decibel from "@decibel/components"
