@@ -1,9 +1,10 @@
-const path = require("path");
+const path = require("path")
+const { kebabCase } = require("lodash")
 
-exports.createPages = async (gatsbyUtilities) => {
-  const posts = await getPosts(gatsbyUtilities);
-  createPostPages(posts, gatsbyUtilities);
-};
+exports.createPages = async gatsbyUtilities => {
+  const posts = await getPosts(gatsbyUtilities)
+  createPostPages(posts, gatsbyUtilities)
+}
 
 async function getPosts({ graphql, reporter }) {
   const results = await graphql(/* GraphQL */ `
@@ -41,27 +42,27 @@ async function getPosts({ graphql, reporter }) {
         }
       }
     }
-  `);
+  `)
 
   if (results.errors) {
     reporter.panicOnBuild(
       `There was an error loading your blog posts`,
-      results.errors,
-    );
-    return;
+      results.errors
+    )
+    return
   }
 
-  return results.data.allCustomApi.nodes[0].documents;
+  return results.data.allCustomApi.nodes[0].documents
 }
 
 function createPostPages(posts, { actions: { createPage } }) {
-  posts.forEach((post) => {
+  posts.forEach(post => {
     createPage({
-      path: `/${post.document.id}`,
+      path: `/${kebabCase(post.document.name)}`,
       component: path.resolve("./src/templates/post/post.jsx"),
       context: {
         post: post.document,
       },
-    });
-  });
+    })
+  })
 }
