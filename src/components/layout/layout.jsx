@@ -1,11 +1,13 @@
 import React from "react"
+import { Header } from "../header"
+import { Footer } from "../footer"
 
 export const Layout = ({ children }) => {
   return (
     <div>
-      <p>Place header here</p>
+      <Header/>
       <main>{children}</main>
-      <p>Place footer here</p>
+      <Footer />
     </div>
   )
 }

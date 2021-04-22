@@ -1,5 +1,9 @@
 $acoustic-font-path: '../node_modules/@decibel/components/lib/scss/' !global;
 @import '~@decibel/components/lib/styles.css';
+@import '~@decibel/components/lib/scss/acoustic-theme/_acoustic-theme';
+@import '~@decibel/components/lib/scss/globals/scss/vendor/@carbon/elements/scss/themes/generated/_tokens';
+@import '~@decibel/components/lib/scss/globals/scss/_vars';
+@import '~@decibel/components/lib/scss/globals/scss/helper-mixins';
 
 .container {
     width: 100%;

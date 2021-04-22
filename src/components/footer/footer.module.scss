@@ -1,0 +1,19 @@
+@import '~@decibel/components/lib/scss/globals/scss/helper-mixins';
+@import '~@decibel/components/lib/scss/acoustic-theme/_acoustic-theme';
+
+.footer {
+  background-color: $ui-06;
+  color: $text-04;
+  padding: carbon--rem(24px);
+  margin-top: carbon--rem(48px);
+}
+
+.row {
+  display: flex;
+}
+
+.copy-right {
+  color: $active-01;
+  font-size: carbon--rem(12px);
+  margin-top: carbon--rem(16px);
+}
