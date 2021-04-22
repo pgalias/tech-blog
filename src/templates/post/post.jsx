@@ -1,4 +1,4 @@
-import React, { createRef } from "react"
+import React from "react"
 import { unescape } from "lodash"
 import { Link } from "gatsby"
 import { Layout } from "../../components/layout"

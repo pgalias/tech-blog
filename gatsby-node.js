@@ -35,8 +35,8 @@ async function getPosts({ graphql, reporter }) {
               }
               tags
               description
-              lastModified(fromNow: true)
-              created(fromNow: true)
+              lastModified(formatString: "DD/MM/YY")
+              created(formatString: "DD/MM/YY")
             }
           }
         }
