@@ -6,6 +6,7 @@ import * as styles from "./style.module.scss"
 import Highlight, { defaultProps } from "prism-react-renderer"
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live"
 import * as decibel from "@decibel/components"
+import theme from 'prism-react-renderer/themes/nightOwl';
 
 const Post = ({ pageContext: { post } }) => {
   const element = document.createElement("div")
@@ -25,7 +26,7 @@ const Post = ({ pageContext: { post } }) => {
 
       if (isLive && isReact) {
         return (
-          <LiveProvider code={code} scope={{ Button: decibel.Button }}>
+          <LiveProvider code={code} scope={{ Button: decibel.Button }} theme={theme}>
             <LiveEditor />
             <LiveError />
             <LivePreview />
@@ -34,7 +35,7 @@ const Post = ({ pageContext: { post } }) => {
       }
 
       return (
-        <Highlight {...defaultProps} code={code} language={language}>
+        <Highlight {...defaultProps} code={code} language={language} theme={theme}>
           {({ className, style, tokens, getLineProps, getTokenProps }) => (
             <pre className={className} style={style}>
               {tokens.map((line, i) => (
