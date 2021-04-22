@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import { slugifyPost } from "../utils/string"
-import * as styles from "./index.module.css"
+import * as styles from "./index.module.scss"
 
 export default function Home({ data }) {
   const posts = data.allCustomApi.nodes[0].documents.map(post => post.document)
