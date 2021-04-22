@@ -15,44 +15,63 @@ limitations under the License.
 // See: https://docs.ckeditor.com/ckeditor5/latest/builds/guides/integration/configuration.html and
 // https://docs.ckeditor.com/ckeditor5/latest/api/module_core_editor_editorconfig-EditorConfig.html
 var editorPromise = ClassicEditor.create(document.querySelector("#editor"), {
+  codeBlock: {
+    languages: [
+      { language: "plaintext", label: "Plain text" }, // The default language.
+      { language: "c", label: "C" },
+      { language: "cs", label: "C#" },
+      { language: "cpp", label: "C++" },
+      { language: "css", label: "CSS" },
+      { language: "diff", label: "Diff" },
+      { language: "html", label: "HTML" },
+      { language: "java", label: "Java" },
+      { language: "javascript", label: "JavaScript" },
+      { language: "javascript-live", label: "JavaScript live", class: "language-javascript live" },
+      { language: "php", label: "PHP" },
+      { language: "python", label: "Python" },
+      { language: "ruby", label: "Ruby" },
+      { language: "typescript", label: "TypeScript" },
+      { language: "xml", label: "XML" },
+    ],
+  },
   toolbar: {
     items: [
-      'heading',
-      '|',
-      'bold',
-      'italic',
-      'link',
-      'bulletedList',
-      'numberedList',
-      '|',
-      'outdent',
-      'indent',
-      '|',
-      'imageUpload',
-      'blockQuote',
-      'insertTable',
-      'mediaEmbed',
-      'undo',
-      'redo',
-      'code',
-      'codeBlock',
-      'removeFormat'
-    ]
+      "heading",
+      "|",
+      "bold",
+      "italic",
+      "link",
+      "bulletedList",
+      "numberedList",
+      "|",
+      "outdent",
+      "indent",
+      "|",
+      "imageUpload",
+      "blockQuote",
+      "insertTable",
+      "mediaEmbed",
+      "undo",
+      "redo",
+      "code",
+      "codeBlock",
+      "removeFormat",
+    ],
   },
-  language: 'en',
+  language: "en",
   image: {
     toolbar: [
-      'imageTextAlternative',
-      'imageStyle:full',
-      'imageStyle:side'
-    ]
+      "imageTextAlternative",
+      "imageStyle:full",
+      "imageStyle:side",
+    ],
   },
   table: {
     contentToolbar: [
-      'tableColumn',
-      'tableRow',
-      'mergeTableCells'
-    ]
+      "tableColumn",
+      "tableRow",
+      "mergeTableCells",
+    ],
   },
 }).catch((error) => {
   console.log(error);
