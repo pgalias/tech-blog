@@ -1,54 +1,20 @@
-import React, { createRef } from "react"
-import { unescape } from "lodash"
+import React from "react"
 import { Link } from "gatsby"
 import { Layout } from "../../components/layout"
 import * as styles from "./style.module.scss"
-import Highlight, { defaultProps } from "prism-react-renderer"
-import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live"
-import * as decibel from "@decibel/components"
-import theme from 'prism-react-renderer/themes/nightOwl';
+import { CodeBlock } from "./code-block"
+
+const isCodeBlock = element =>
+  element.tagName.toLocaleLowerCase() === "pre" &&
+  element.children[0].tagName.toLocaleLowerCase() === "code"
 
 const Post = ({ pageContext: { post } }) => {
   const element = document.createElement("div")
   element.innerHTML = post.elements.body.value.text.value
 
   const elements = Array.from(element.children).map(e => {
-    if (
-      e.tagName.toLocaleLowerCase() === "pre" &&
-      e.children[0].tagName.toLocaleLowerCase() === "code"
-    ) {
-      const language = Array.from(e.children[0].classList)
-        .map(c => (c.startsWith("language-") ? c.replace("language-", "") : ""))
-        .filter(c => c)[0]
-      const isReact = language === "javascript"
-      const isLive = Array.from(e.children[0].classList).includes("live")
-      const code = unescape(e.children[0].innerHTML)
-
-      if (isLive && isReact) {
-        return (
-          <LiveProvider code={code} scope={{ Button: decibel.Button }} theme={theme}>
-            <LiveEditor />
-            <LiveError />
-            <LivePreview />
-          </LiveProvider>
-        )
-      }
-
-      return (
-        <Highlight {...defaultProps} code={code} language={language} theme={theme}>
-          {({ className, style, tokens, getLineProps, getTokenProps }) => (
-            <pre className={className} style={style}>
-              {tokens.map((line, i) => (
-                <div {...getLineProps({ line, key: i })}>
-                  {line.map((token, key) => (
-                    <span {...getTokenProps({ token, key })} />
-                  ))}
-                </div>
-              ))}
-            </pre>
-          )}
-        </Highlight>
-      )
+    if (isCodeBlock(e)) {
+      return <CodeBlock codeBlock={e.children[0]} />
     }
 
     return <div dangerouslySetInnerHTML={{ __html: e.outerHTML }} />
