@@ -38,13 +38,10 @@
 
     .author {
         font-weight: bold;
-        //display: block;
-
-        //@media (min-width: 640px) {
-            padding-right: carbon--rem(10px);
-            border-right: 1px solid;
-            display: inline;
-        //}
+        padding-right: carbon--rem(10px);
+        border-right: 1px solid;
+        display: inline;
+        vertical-align: middle;
     }
 
     .date {
