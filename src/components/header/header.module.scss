@@ -9,8 +9,24 @@
 
 .logoWrapper {
   display: flex;
-  padding: 1rem 1rem 1rem 0;
+  padding: 0 1rem 1rem 0;
   width: fit-content;
+}
+
+.navWrapper {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem;
+}
+
+.navItems a {
+  padding-left: 1.5rem;
+  color: #d1fdee;
+  @include type-style('productive-heading-01');
+
+  &:hover {
+    color: #ffffff;
+  }
 }
 
 .productName {
