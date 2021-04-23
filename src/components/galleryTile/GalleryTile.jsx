@@ -6,7 +6,7 @@ import {
 } from "@decibel/components";
 import "./galleryTile.scss";
 
-export const GalleryTile = (
+const GalleryTile = (
   { alt, src, description, lastModified, title, onClick },
 ) => {
   return (
@@ -24,3 +24,5 @@ export const GalleryTile = (
     </DecibelGalleryTile>
   );
 };
+
+export default GalleryTile;

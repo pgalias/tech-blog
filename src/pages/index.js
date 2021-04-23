@@ -2,15 +2,17 @@ import React from "react";
 import { graphql, navigate } from "gatsby";
 import { slugifyPost } from "../utils/string";
 import { Layout } from "../components/layout";
-import { GalleryTile } from "../components/galleryTile/GalleryTile";
+import Loadable from "@loadable/component"
 
 import * as styles from "./index.module.scss";
+
+const GalleryTile = Loadable(() => import("../components/galleryTile/GalleryTile"));
 
 export default function Home({ data }) {
   const posts = data.allCustomApi.nodes[0].documents.map((post) =>
     post.document
   );
-  console.log(posts, "posts");
+
   return (
     <Layout>
       <div className="container">
