@@ -12,7 +12,7 @@ export const Header = () => (
       </Link>
       <div className={styles.navItems}>
         <Link to="/">Our team</Link>
-        <Link to="https://www.acoustic.com/careers">Join us</Link>
+        <Link to="https://www.acoustic.com/careers" target="_blank">Join us</Link>
       </div>
     </div>
   </header>
