@@ -33,7 +33,6 @@ async function getPosts({ graphql, reporter }) {
                   value
                 }
               }
-              tags
               description
               lastModified(formatString: "DD/MM/YY")
               created(formatString: "DD/MM/YY")
