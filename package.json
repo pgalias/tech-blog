@@ -55,6 +55,7 @@
     "yup": "^0.32.9"
   },
   "devDependencies": {
+    "browser-monads": "^1.0.0",
     "prettier": "2.2.1"
   },
   "repository": {

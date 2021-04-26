@@ -1,4 +1,5 @@
 import React from "react"
+import { document } from "browser-monads";
 import { Layout } from "../../components/layout"
 import * as styles from "./style.module.scss"
 import { CodeBlock } from "./code-block"
@@ -8,10 +9,11 @@ const isCodeBlock = element =>
   element.children[0].tagName.toLocaleLowerCase() === "code"
 
 const Post = ({ pageContext: { post } }) => {
-  const element = document.createElement("div")
-  element.innerHTML = post.elements.body.value.text.value
+  const isSSR = typeof window === "undefined";
+  const element = !isSSR ? document.createElement("div") : {};
+  element.innerHTML = !isSSR ? post.elements.body.value.text.value : '';
 
-  const elements = Array.from(element.children).map(e => {
+  const elements = !isSSR && Array.from(element.children).map(e => {
     if (isCodeBlock(e)) {
       return <CodeBlock codeBlock={e.children[0]} />
     }
