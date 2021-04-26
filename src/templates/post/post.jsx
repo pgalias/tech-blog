@@ -1,5 +1,6 @@
 import React from "react"
 import { document } from "browser-monads";
+import parse from 'html-react-parser';
 import { Layout } from "../../components/layout"
 import * as styles from "./style.module.scss"
 import { CodeBlock } from "./code-block"
@@ -18,7 +19,7 @@ const Post = ({ pageContext: { post } }) => {
       return <CodeBlock codeBlock={e.children[0]} />
     }
 
-    return <div dangerouslySetInnerHTML={{ __html: e.outerHTML }} />
+    return parse(e.outerHTML);
   })
 
   return (
