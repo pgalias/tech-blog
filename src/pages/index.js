@@ -16,7 +16,6 @@ export default function Home({ data }) {
         <h1 className={styles.articleIntro}>Welcome to bugno</h1>
         <section className={styles.section}>
           {posts.map((post) => (
-            // <div key={post.id} className={styles.article} onClick={() => navigate()}>
               <Link key={post.id} className={styles.article} to={`/${slugifyPost(post)}`}>
                 <img className={styles.articleImg} src={`https://content-eu-4.content-cms.com/859f2008-a40a-4b92-afd0-24bb44d10124${post.elements.img.url}`} alt={post.elements.img.altText} />
                 <p className={styles.articleMeta}>
@@ -26,7 +25,6 @@ export default function Home({ data }) {
                 <h2 className={styles.articleName}>{post.name}</h2>
                 <p>{post.description}</p>
               </Link>
-            // </div>
           ))}
         </section>
       </div>
