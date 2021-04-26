@@ -46,9 +46,8 @@ const isLive = cd => Array.from(cd.classList).includes("live")
 
 export const CodeBlock = ({ codeBlock }) => {
   const language = getLanguage(codeBlock)
-  const code = unescape(codeBlock.innerHTML)
+  const code = unescape(codeBlock.innerHTML).replaceAll('&nbsp;', ' ');
 
-  console.log(isLive(codeBlock), codeBlock.classList)
   if (isReact(language) && isLive(codeBlock)) {
     return <LiveCodeBlock code={code} />
   }
