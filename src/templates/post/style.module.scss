@@ -1,14 +1,11 @@
-@import '~@decibel/components/lib/scss/globals/scss/helper-mixins';
-@import '~@decibel/components/lib/scss/acoustic-theme/_acoustic-theme';
-
 .header {
-    background-color: rgba($tag-02, 0.75);
+    background-color: rgba(#047970, 0.75);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-blend-mode: multiply;
-    color: $ui-02;
-    padding: carbon--rem(200px) 0;
+    color: #fff;
+    padding: 12.5rem 0;
     position: relative;
     overflow: hidden;
 }
@@ -19,26 +16,26 @@
     text-align: center;
     font-weight: bolder;
     letter-spacing: 2px;
-    font-size: carbon--rem(28px);
+    font-size: 1.75rem;
 
     @media (min-width: 640px) {
-        font-size: carbon--rem(42px);
+        font-size: 2.625rem;
     }
 }
 
 .meta {
-    margin-top: carbon--rem(16px);
+    margin-top: 1rem;
     text-align: center;
     letter-spacing: 2px;
-    font-size: carbon--rem(12px);
+    font-size: 0.75rem;
 
     @media (min-width: 640px) {
-        font-size: carbon--rem(16px);
+        font-size: 1rem;
     }
 
     .author {
         font-weight: bold;
-        padding-right: carbon--rem(10px);
+        padding-right: 0.625rem;
         border-right: 1px solid;
         display: inline;
         vertical-align: middle;
@@ -46,11 +43,11 @@
 
     .date {
         font-size: 80%;
-        padding-left: carbon--rem(10px);
+        padding-left: 0.625rem;
 
     }
 }
 
 .article {
-    margin: carbon--rem(36px) 0;
+    margin: 2.25rem 0;
 }

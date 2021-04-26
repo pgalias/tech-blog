@@ -10,12 +10,9 @@
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "clean": "gatsby clean"
   },
   "dependencies": {
-    "@carbon/icons-react": "^10.30.0",
-    "@decibel/components": "^3.14.0",
     "@dnd-kit/sortable": "^3.0.1",
     "@dnd-kit/utilities": "^2.0.0",
     "@nivo/core": "^0.67.0",
